@@ -16,7 +16,7 @@ body {
     flex-direction: column;
     width: 100%;
     max-width: 500px;
-    height: 100vh;
+    height: 100vh; /* Full height */
     background-color: #fff;
     border-radius: 20px;
     box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
@@ -24,11 +24,11 @@ body {
 }
 
 #messages {
-    flex-grow: 1;
+    flex-grow: 1; /* Allows this section to grow and take up most of the space */
     padding: 15px;
     background-color: #f8e1e9; /* Light floral background */
     border-bottom: 2px solid #ffc0cb; /* Soft pink border */
-    overflow-y: auto;
+    overflow-y: auto; /* Only the messages section will be scrollable */
     display: flex;
     flex-direction: column;
     gap: 10px;
@@ -61,10 +61,12 @@ body {
     padding: 15px;
     background-color: #fff;
     border-top: 2px solid #ffc0cb; /* Soft pink border */
+    position: sticky; /* Keeps it fixed at the bottom */
+    bottom: 0; /* Sticks it to the bottom */
 }
 
 #messageText {
-    flex-grow: 1;
+    flex-grow: 1; /* Takes up available space */
     padding: 15px;
     border: 2px solid #ffb6c1;
     border-radius: 30px;
