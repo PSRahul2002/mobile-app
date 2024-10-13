@@ -10,6 +10,7 @@ body {
     min-height: 100vh;
     background-attachment: fixed;
     overflow: hidden; /* Prevent body from scrolling */
+    padding: 20px 0; /* 20px space at the top and bottom */
 }
 
 /* Letter container styling */
@@ -21,13 +22,13 @@ body {
     max-width: 800px;
     background-color: #fff0f5;
     padding: 20px;
-    margin: 20px;
+    margin: 0 20px;
     border-radius: 20px;
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
     text-align: left;
-    overflow-y: auto; /* Enable vertical scrolling */
-    height: 90vh; /* Ensure container takes up most of the viewport height */
+    height: calc(100vh - 40px); /* Ensure container takes up full viewport minus 20px top and bottom */
     width: 100%;
+    overflow-y: auto; /* Enable vertical scrolling */
 }
 
 /* Letter content styling */
@@ -35,7 +36,7 @@ body {
     color: #d4739d;
     font-size: 1.2em;
     line-height: 1.6em;
-    flex-grow: 1; /* Allow content to take up available space */
+    flex-grow: 1;
 }
 
 #letter h1 {
@@ -60,6 +61,7 @@ body {
     justify-content: space-between;
     width: 100%;
     margin-top: 20px;
+    flex-wrap: wrap; /* Ensures buttons stack properly on smaller screens */
 }
 
 /* Button styling */
@@ -74,7 +76,9 @@ body {
     cursor: pointer;
     box-shadow: 0 5px 10px rgba(255, 105, 135, 0.4);
     outline: none;
-    transition: none; /* No animations */
+    transition: background-color 0.2s ease;
+    margin-bottom: 10px;
+    width: 48%; /* Each button takes 48% of the available width on larger screens */
 }
 
 #declineButton {
@@ -101,15 +105,11 @@ body {
 
 /* Media query for responsive design */
 @media (max-width: 600px) {
-    body {
-        padding: 20px 0; /* Ensure 20px space at the top and bottom */
-    }
-
     .letter-container {
         padding: 20px;
-        margin: 0 10px; /* No top/bottom margin, but 10px on the sides */
-        width: 100%; /* Full width for mobile */
-        height: calc(100vh - 40px); /* Ensure the height minus 40px (20px top and bottom) */
+        margin: 0 10px;
+        height: calc(100vh - 40px); /* Maintain 20px empty space on top and bottom */
+        width: 100%;
     }
 
     #letter {
@@ -118,14 +118,14 @@ body {
     }
     
     #button-container {
-        flex-direction: column;
+        flex-direction: column; /* Stack buttons vertically on mobile */
         align-items: center;
         width: 100%;
     }
 
     #chatButton, #declineButton {
-        width: 100%; /* Full width for buttons */
-        margin-bottom: 10px; /* Add spacing between buttons */
+        width: 100%; /* Full width for buttons on mobile */
+        margin-bottom: 10px;
         padding: 12px;
     }
 }
