@@ -1,15 +1,15 @@
 /* General page styling */
 body {
     margin: 0;
-    padding: 0;
-    font-family: Arial, sans-serif; /* Normal, clean font */
+    padding: 20px 0; /* Apply 20px of padding at the top and bottom */
+    font-family: Arial, sans-serif;
     background: linear-gradient(to bottom right, #ffe4e1, #f8bbd0);
     display: flex;
     justify-content: center;
     align-items: center;
     min-height: 100vh;
     background-attachment: fixed;
-    overflow: hidden;
+    overflow: hidden; /* Prevent body from scrolling */
 }
 
 /* Letter container styling */
@@ -25,9 +25,10 @@ body {
     border-radius: 20px;
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
     text-align: left;
-    height: calc(100vh - 40px); /* Full height minus 40px for top/bottom padding */
+    height: 100%; /* Full container height */
     width: 100%;
-    overflow-y: auto;
+    overflow-y: auto; /* Enable vertical scrolling */
+    box-sizing: border-box;
 }
 
 /* Letter content styling */
@@ -47,7 +48,7 @@ body {
 
 #letter p {
     margin-bottom: 15px;
-    text-indent: 20px;
+    text-indent: 20px; /* Romantic letter style with indented text */
 }
 
 #letter p strong {
@@ -60,7 +61,7 @@ body {
     justify-content: space-between;
     width: 100%;
     margin-top: 20px;
-    flex-wrap: wrap; /* Ensure buttons stack properly on smaller screens */
+    flex-wrap: wrap;
 }
 
 /* Button styling */
@@ -77,7 +78,7 @@ body {
     outline: none;
     transition: background-color 0.2s ease;
     margin-bottom: 10px;
-    width: 48%; /* Each button takes 48% of available width on larger screens */
+    width: 48%;
 }
 
 #declineButton {
@@ -104,25 +105,21 @@ body {
 
 /* Media query for responsive design */
 @media (max-width: 600px) {
-    body {
-        padding: 0;
-    }
-
     .letter-container {
         padding: 20px;
         margin: 0 10px;
-        height: calc(100vh - 40px); /* Maintain 20px empty space on top and bottom */
+        height: 100%;
         width: 100%;
-        box-sizing: border-box; /* Ensures the padding and margin don't affect layout */
+        box-sizing: border-box; /* Ensures padding is accounted for */
     }
 
     #letter {
-        font-size: 1em; /* Adjust font size for mobile */
+        font-size: 1em;
         line-height: 1.4em;
     }
     
     #button-container {
-        flex-direction: column; /* Stack buttons vertically on mobile */
+        flex-direction: column;
         align-items: center;
         width: 100%;
     }
