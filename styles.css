@@ -8,7 +8,7 @@ body {
     justify-content: center;
     align-items: center;
     height: 100vh;
-    overflow: hidden;
+    overflow: hidden; /* Prevents body scroll */
     background-attachment: fixed;
 }
 
@@ -21,12 +21,15 @@ body {
     max-width: 800px;
     background-color: #fff0f5;
     padding: 40px 30px; /* Adjusted padding for better responsiveness */
-    margin: 20px; /* Reduced margins for smaller devices */
+    margin: 20px; /* Margin to ensure content doesn't touch edges */
     border-radius: 20px;
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
     text-align: left;
     position: relative;
     animation: fadeIn 1.5s ease-in-out;
+    max-height: 80vh; /* Restrict height to 80% of viewport height */
+    overflow-y: auto; /* Adds vertical scroll when content exceeds available space */
+    scroll-behavior: smooth; /* Smooth scrolling */
 }
 
 @keyframes fadeIn {
@@ -36,7 +39,7 @@ body {
 
 #letter {
     color: #d4739d;
-    font-size: 1.2em; /* Reduced font size slightly for mobile scaling */
+    font-size: 1.2em;
     line-height: 1.6em;
     text-shadow: 0 2px 4px rgba(255, 105, 135, 0.3);
 }
@@ -51,7 +54,7 @@ body {
 
 #letter p {
     margin-bottom: 15px;
-    text-indent: 20px; /* Slightly reduced indentation for responsiveness */
+    text-indent: 20px; /* Romantic letter style with indented text */
 }
 
 #letter p strong {
@@ -95,6 +98,16 @@ body {
     background-color: #ff6f91;
 }
 
+/* Scroll bar customization */
+.letter-container::-webkit-scrollbar {
+    width: 8px;
+}
+
+.letter-container::-webkit-scrollbar-thumb {
+    background-color: #ff6f91; /* Color of scroll thumb */
+    border-radius: 10px;
+}
+
 /* Media query for responsive design */
 @media (max-width: 600px) {
     body {
@@ -103,9 +116,10 @@ body {
 
     .letter-container {
         padding: 20px; /* Reduced padding for mobile */
-        margin: 10px; /* Reduce margin for smaller screens */
+        margin: 10px; /* Reduced margin for smaller screens */
         font-size: 1em; /* Adjusted font size for smaller screens */
         width: 100%; /* Make the container take full width on mobile */
+        max-height: 85vh; /* Adjust max height for mobile */
     }
 
     #letter {
