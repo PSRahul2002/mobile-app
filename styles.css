@@ -7,9 +7,9 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 100vh;
+    min-height: 100vh;
     background-attachment: fixed;
-    overflow: hidden;
+    overflow: hidden; /* Prevent body from scrolling */
 }
 
 /* Letter container styling */
@@ -25,12 +25,13 @@ body {
     border-radius: 20px;
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
     text-align: left;
-    position: relative;
-    max-height: 80vh; /* Restrict height to ensure scrollability */
     overflow-y: auto; /* Enable vertical scrolling */
     scroll-behavior: smooth; /* Smooth scroll for better UX */
+    max-height: calc(100vh - 40px); /* Dynamic height adjustment */
+    width: 100%; /* Make sure it adjusts to width of the screen */
 }
 
+/* Letter content styling */
 #letter {
     color: #d4739d;
     font-size: 1.2em;
@@ -109,7 +110,7 @@ body {
         padding: 20px;
         margin: 10px;
         width: 100%; /* Full width for mobile */
-        max-height: 85vh; /* More height for mobile */
+        max-height: calc(100vh - 40px); /* Maintain space for mobile */
     }
 
     #letter {
