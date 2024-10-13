@@ -1,4 +1,4 @@
-/* General romantic page styling */
+/* General page styling */
 body {
     margin: 0;
     padding: 0;
@@ -8,8 +8,8 @@ body {
     justify-content: center;
     align-items: center;
     height: 100vh;
-    overflow: hidden; /* Prevents body scroll */
     background-attachment: fixed;
+    overflow: hidden;
 }
 
 /* Letter container styling */
@@ -20,28 +20,21 @@ body {
     justify-content: center;
     max-width: 800px;
     background-color: #fff0f5;
-    padding: 40px 30px; /* Adjusted padding for better responsiveness */
-    margin: 20px; /* Margin to ensure content doesn't touch edges */
+    padding: 30px;
+    margin: 20px;
     border-radius: 20px;
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
     text-align: left;
     position: relative;
-    animation: fadeIn 1.5s ease-in-out;
-    max-height: 80vh; /* Restrict height to 80% of viewport height */
-    overflow-y: auto; /* Adds vertical scroll when content exceeds available space */
-    scroll-behavior: smooth; /* Smooth scrolling */
-}
-
-@keyframes fadeIn {
-    from { opacity: 0; }
-    to { opacity: 1; }
+    max-height: 80vh; /* Restrict height to ensure scrollability */
+    overflow-y: auto; /* Enable vertical scrolling */
+    scroll-behavior: smooth; /* Smooth scroll for better UX */
 }
 
 #letter {
     color: #d4739d;
     font-size: 1.2em;
     line-height: 1.6em;
-    text-shadow: 0 2px 4px rgba(255, 105, 135, 0.3);
 }
 
 #letter h1 {
@@ -49,7 +42,6 @@ body {
     font-size: 2em;
     margin-bottom: 20px;
     text-align: center;
-    text-shadow: 0 4px 8px rgba(255, 105, 135, 0.6);
 }
 
 #letter p {
@@ -66,12 +58,12 @@ body {
     display: flex;
     justify-content: space-between;
     width: 100%;
-    margin-top: 30px; /* Adjusted margin for better spacing */
+    margin-top: 20px;
 }
 
 /* Button styling */
 #chatButton, #declineButton {
-    font-family: Arial, sans-serif; /* Normal font */
+    font-family: Arial, sans-serif;
     background-color: #ff6f91;
     color: white;
     padding: 12px 30px;
@@ -79,15 +71,14 @@ body {
     border-radius: 30px;
     font-size: 1.1em;
     cursor: pointer;
-    box-shadow: 0 10px 20px rgba(255, 105, 135, 0.4);
-    transition: all 0.3s ease;
+    box-shadow: 0 5px 10px rgba(255, 105, 135, 0.4);
+    transition: all 0.2s ease; /* Shorter transition for better performance */
     outline: none;
 }
 
 #chatButton:hover, #declineButton:hover {
     background-color: #ff4081;
-    box-shadow: 0 15px 30px rgba(255, 105, 135, 0.6);
-    transform: translateY(-3px);
+    transform: translateY(-2px); /* Slight lift effect */
 }
 
 #declineButton {
@@ -104,7 +95,7 @@ body {
 }
 
 .letter-container::-webkit-scrollbar-thumb {
-    background-color: #ff6f91; /* Color of scroll thumb */
+    background-color: #ff6f91;
     border-radius: 10px;
 }
 
@@ -115,27 +106,26 @@ body {
     }
 
     .letter-container {
-        padding: 20px; /* Reduced padding for mobile */
-        margin: 10px; /* Reduced margin for smaller screens */
-        font-size: 1em; /* Adjusted font size for smaller screens */
-        width: 100%; /* Make the container take full width on mobile */
-        max-height: 85vh; /* Adjust max height for mobile */
+        padding: 20px;
+        margin: 10px;
+        width: 100%; /* Full width for mobile */
+        max-height: 85vh; /* More height for mobile */
     }
 
     #letter {
-        font-size: 1em; /* Smaller font for mobile */
-        line-height: 1.4em; /* Reduced line height for mobile */
+        font-size: 1em; /* Adjust font size for mobile */
+        line-height: 1.4em;
     }
     
     #button-container {
-        flex-direction: column; /* Stack buttons vertically on small screens */
-        align-items: center; /* Center the buttons */
-        width: 100%; /* Ensure buttons take full width */
+        flex-direction: column;
+        align-items: center;
+        width: 100%;
     }
 
     #chatButton, #declineButton {
-        width: 100%; /* Full width for buttons on mobile */
-        margin-bottom: 10px; /* Spacing between buttons */
-        padding: 12px; /* Reduce button padding for mobile */
+        width: 100%; /* Full width for buttons */
+        margin-bottom: 10px; /* Add spacing between buttons */
+        padding: 12px;
     }
 }
