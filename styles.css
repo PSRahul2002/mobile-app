@@ -27,7 +27,7 @@ body {
     text-align: left;
     overflow-y: auto; /* Enable vertical scrolling */
     scroll-behavior: smooth; /* Smooth scroll for better UX */
-    max-height: calc(100vh - 40px); /* Dynamic height adjustment */
+    height: 80vh; /* Set a fixed height for content and button visibility */
     width: 100%; /* Make sure it adjusts to width of the screen */
 }
 
@@ -59,7 +59,8 @@ body {
     display: flex;
     justify-content: space-between;
     width: 100%;
-    margin-top: 20px;
+    margin-top: auto; /* Push buttons to the bottom */
+    padding-top: 20px; /* Ensure space between text and buttons */
 }
 
 /* Button styling */
@@ -73,13 +74,13 @@ body {
     font-size: 1.1em;
     cursor: pointer;
     box-shadow: 0 5px 10px rgba(255, 105, 135, 0.4);
-    transition: all 0.2s ease; /* Shorter transition for better performance */
+    transition: all 0.2s ease;
     outline: none;
 }
 
 #chatButton:hover, #declineButton:hover {
     background-color: #ff4081;
-    transform: translateY(-2px); /* Slight lift effect */
+    transform: translateY(-2px);
 }
 
 #declineButton {
@@ -110,7 +111,7 @@ body {
         padding: 20px;
         margin: 10px;
         width: 100%; /* Full width for mobile */
-        max-height: calc(100vh - 40px); /* Maintain space for mobile */
+        height: 85vh; /* Ensure it adjusts for mobile */
     }
 
     #letter {
