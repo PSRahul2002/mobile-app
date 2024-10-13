@@ -1,6 +1,6 @@
 /* General page styling */
 body {
-    margin: 0; 
+    margin: 0;
     padding: 0;
     font-family: Arial, sans-serif; /* Normal, clean font */
     background: linear-gradient(to bottom right, #ffe4e1, #f8bbd0);
@@ -21,7 +21,7 @@ body {
     max-width: 800px;
     background-color: #fff0f5;
     padding: 20px;
-    margin: 10px 20px 30px; /* Reduced top margin, added more at the bottom */
+    margin: 5px 20px 40px; /* Reduced top margin (5px) and increased bottom margin (40px) */
     border-radius: 20px;
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
     text-align: left;
@@ -107,7 +107,7 @@ body {
 
     .letter-container {
         padding: 20px;
-        margin: 5px 10px 20px; /* Adjusted margins for mobile */
+        margin: 5px 10px 30px; /* Adjusted margins for mobile: reduced top margin, more bottom margin */
         width: 100%; /* Full width for mobile */
         height: 85vh; /* Adjust height for mobile */
     }
