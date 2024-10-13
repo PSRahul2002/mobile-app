@@ -1,141 +1,131 @@
-/* General styling with a normal, elegant font theme */
+/* General page styling */
 body {
-    font-family: Arial, sans-serif;
-    background-color: #fff0f5; /* Light pink background */
     margin: 0;
     padding: 0;
+    font-family: Arial, sans-serif; /* Normal, clean font */
+    background: linear-gradient(to bottom right, #ffe4e1, #f8bbd0);
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 100vh;
-    background-image: linear-gradient(to bottom right, #ffb6c1, #ffe4e1); /* Romantic gradient */
+    min-height: 100vh;
+    background-attachment: fixed;
+    overflow: hidden; /* Prevent body from scrolling */
 }
 
-#chat-container {
+/* Letter container styling */
+.letter-container {
     display: flex;
     flex-direction: column;
-    width: 100%;
-    max-width: 500px;
-    height: 100vh; /* Full height */
-    background-color: #fff;
-    border-radius: 20px;
-    box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
-    overflow: hidden;
-}
-
-#messages {
-    flex-grow: 1;
-    padding: 15px;
-    background-color: #f8e1e9;
-    border-bottom: 2px solid #ffc0cb;
-    overflow-y: auto;
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
-}
-
-.message {
-    padding: 12px;
-    border-radius: 15px;
-    max-width: 75%;
-    word-wrap: break-word;
-    word-break: break-word;
-    font-size: 16px;
-    line-height: 1.4;
-    background-color: #ffe4e1;
-    align-self: flex-end;
-}
-
-.message.other {
-    background-color: #fff;
-    align-self: flex-start;
-}
-
-.message.you {
-    background-color: #ffc1e3;
-}
-
-#input-container {
-    display: flex;
-    justify-content: space-between; /* Input and Send button on one line */
     align-items: center;
-    padding: 15px;
-    background-color: #fff;
-    border-top: 2px solid #ffc0cb;
+    justify-content: space-between;
+    max-width: 800px;
+    background-color: #fff0f5;
+    padding: 20px;
+    margin: 20px;
+    border-radius: 20px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    text-align: left;
+    overflow-y: auto; /* Enable vertical scrolling */
+    height: 90vh; /* Ensure container takes up most of the viewport height */
+    width: 100%;
 }
 
-#messageText {
-    flex-grow: 1;
-    padding: 15px;
-    border: 2px solid #ffb6c1;
-    border-radius: 30px;
-    font-size: 16px;
-    background-color: #fffaf0;
-    outline: none;
-    margin-right: 10px;
+/* Letter content styling */
+#letter {
+    color: #d4739d;
+    font-size: 1.2em;
+    line-height: 1.6em;
+    flex-grow: 1; /* Allow content to take up available space */
 }
 
-button {
-    padding: 12px 20px;
-    background-color: #ff69b4;
-    border: none;
-    border-radius: 30px;
-    color: white;
-    font-size: 16px;
-    font-weight: bold;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
-    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
-}
-
-button:hover {
-    background-color: #ff1493;
-}
-
-#deleteUser2Messages {
-    padding: 12px;
-    background-color: #ff3333;
-    color: white;
-    border: none;
-    border-radius: 30px;
-    cursor: pointer;
-    display: block; /* Ensure it's visible for User1 */
-    margin: 15px auto; /* Centered below input container */
-    max-width: 500px;
+#letter h1 {
+    color: #ff6f91;
+    font-size: 2em;
+    margin-bottom: 20px;
     text-align: center;
 }
 
-/* Mobile responsiveness */
+#letter p {
+    margin-bottom: 15px;
+    text-indent: 20px; /* Romantic letter style with indented text */
+}
+
+#letter p strong {
+    font-size: 1.1em;
+}
+
+/* Button container styling */
+#button-container {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    margin-top: 20px;
+}
+
+/* Button styling */
+#chatButton, #declineButton {
+    font-family: Arial, sans-serif;
+    background-color: #ff6f91;
+    color: white;
+    padding: 12px 30px;
+    border: none;
+    border-radius: 30px;
+    font-size: 1.1em;
+    cursor: pointer;
+    box-shadow: 0 5px 10px rgba(255, 105, 135, 0.4);
+    outline: none;
+    transition: none; /* No animations */
+}
+
+#declineButton {
+    background-color: #ff9e9e;
+}
+
+#chatButton:hover, #declineButton:hover {
+    background-color: #ff4081;
+}
+
+#declineButton:hover {
+    background-color: #ff6f91;
+}
+
+/* Scroll bar customization */
+.letter-container::-webkit-scrollbar {
+    width: 8px;
+}
+
+.letter-container::-webkit-scrollbar-thumb {
+    background-color: #ff6f91;
+    border-radius: 10px;
+}
+
+/* Media query for responsive design */
 @media (max-width: 600px) {
-    #chat-container {
-        height: 100vh;
+    body {
+        padding: 20px 0; /* Ensure 20px space at the top and bottom */
     }
 
-    #messages {
-        padding: 10px;
+    .letter-container {
+        padding: 20px;
+        margin: 0 10px; /* No top/bottom margin, but 10px on the sides */
+        width: 100%; /* Full width for mobile */
+        height: calc(100vh - 40px); /* Ensure the height minus 40px (20px top and bottom) */
     }
 
-    .message {
-        padding: 10px;
-        font-size: 14px;
+    #letter {
+        font-size: 1em; /* Adjust font size for mobile */
+        line-height: 1.4em;
+    }
+    
+    #button-container {
+        flex-direction: column;
+        align-items: center;
+        width: 100%;
     }
 
-    #input-container {
-        padding: 10px;
-    }
-
-    #messageText {
+    #chatButton, #declineButton {
+        width: 100%; /* Full width for buttons */
+        margin-bottom: 10px; /* Add spacing between buttons */
         padding: 12px;
-        font-size: 14px;
-    }
-
-    button {
-        padding: 10px 15px; /* Smaller for mobile */
-        font-size: 14px;
-    }
-
-    #deleteUser2Messages {
-        padding: 10px;
-        font-size: 14px;
     }
 }
