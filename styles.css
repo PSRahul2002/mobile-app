@@ -57,12 +57,13 @@ body {
 
 #input-container {
     display: flex;
+    justify-content: space-between; /* Space between input, send, and delete buttons */
     align-items: center;
     padding: 15px;
     background-color: #fff;
     border-top: 2px solid #ffc0cb; /* Soft pink border */
     position: fixed; /* Keep the input box and button locked at the bottom */
-    bottom: 60px; /* Adjusted to give space for the delete button */
+    bottom: 0;
     left: 0;
     right: 0;
     max-width: 500px;
@@ -81,12 +82,12 @@ body {
 }
 
 button {
-    padding: 15px 30px; /* Bigger button */
+    padding: 12px 20px; /* Adjust button padding */
     background-color: #ff69b4; /* Hot pink button */
     border: none;
     border-radius: 30px;
     color: white;
-    font-size: 18px;
+    font-size: 16px;
     font-weight: bold;
     cursor: pointer;
     transition: background-color 0.3s ease;
@@ -105,13 +106,7 @@ button:hover {
     border-radius: 30px;
     cursor: pointer;
     display: block; /* Ensure it's visible for User1 */
-    position: fixed;
-    bottom: 0; /* Place it below the input field */
-    left: 0;
-    right: 0;
-    margin: auto;
-    max-width: 500px;
-    text-align: center;
+    margin-left: 10px; /* Spacing between the buttons */
 }
 
 /* Mobile responsiveness */
@@ -132,20 +127,23 @@ button:hover {
 
     #input-container {
         padding: 10px;
-        bottom: 60px; /* Adjusted to give space for the delete button */
+        flex-direction: column; /* Stack elements on mobile */
     }
 
     #messageText {
+        margin-bottom: 10px; /* Spacing for input field on mobile */
         padding: 12px;
         font-size: 14px;
     }
 
     button {
-        padding: 12px 20px; /* Smaller for mobile */
-        font-size: 16px;
+        padding: 10px 15px; /* Smaller for mobile */
+        font-size: 14px;
     }
 
     #deleteUser2Messages {
+        margin-left: 0;
+        margin-top: 10px;
         padding: 10px;
         font-size: 14px;
     }
