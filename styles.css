@@ -1,136 +1,127 @@
-/* General styling with a romantic, elegant theme */
+/* General romantic page styling */
 body {
-    font-family: 'Cursive', Arial, sans-serif;
-    background-color: #fff0f5; /* Light pink background */
     margin: 0;
     padding: 0;
+    font-family: Arial, sans-serif; /* Normal, clean font */
+    background: linear-gradient(to bottom right, #ffe4e1, #f8bbd0);
     display: flex;
     justify-content: center;
     align-items: center;
     height: 100vh;
-    background-image: linear-gradient(to bottom right, #ffb6c1, #ffe4e1); /* Romantic gradient */
-}
-
-#chat-container {
-    display: flex;
-    flex-direction: column;
-    width: 100%;
-    max-width: 500px;
-    height: 100vh; /* Full height */
-    background-color: #fff;
-    border-radius: 20px;
-    box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
     overflow: hidden;
+    background-attachment: fixed;
 }
 
-#messages {
-    flex-grow: 1; /* Allows this section to grow and take up most of the space */
-    padding: 15px;
-    background-color: #f8e1e9; /* Light floral background */
-    border-bottom: 2px solid #ffc0cb; /* Soft pink border */
-    overflow-y: auto; /* Only the messages section will be scrollable */
+/* Letter container styling */
+.letter-container {
     display: flex;
     flex-direction: column;
-    gap: 10px;
-}
-
-.message {
-    padding: 12px;
-    border-radius: 15px;
-    max-width: 75%;
-    word-wrap: break-word;
-    word-break: break-word;
-    font-size: 16px;
-    line-height: 1.4;
-    background-color: #ffe4e1; /* Light pink for romantic tone */
-    align-self: flex-end;
-}
-
-.message.other {
-    background-color: #fff;
-    align-self: flex-start;
-}
-
-.message.you {
-    background-color: #ffc1e3; /* Light pink with slight lavender tone for your messages */
-}
-
-#input-container {
-    display: flex;
     align-items: center;
-    padding: 15px;
-    background-color: #fff;
-    border-top: 2px solid #ffc0cb; /* Soft pink border */
-    position: sticky; /* Keeps it fixed at the bottom */
-    bottom: 0; /* Sticks it to the bottom */
+    justify-content: center;
+    max-width: 800px;
+    background-color: #fff0f5;
+    padding: 40px 30px; /* Adjusted padding for better responsiveness */
+    margin: 20px; /* Reduced margins for smaller devices */
+    border-radius: 20px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    text-align: left;
+    position: relative;
+    animation: fadeIn 1.5s ease-in-out;
 }
 
-#messageText {
-    flex-grow: 1; /* Takes up available space */
-    padding: 15px;
-    border: 2px solid #ffb6c1;
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+#letter {
+    color: #d4739d;
+    font-size: 1.2em; /* Reduced font size slightly for mobile scaling */
+    line-height: 1.6em;
+    text-shadow: 0 2px 4px rgba(255, 105, 135, 0.3);
+}
+
+#letter h1 {
+    color: #ff6f91;
+    font-size: 2em;
+    margin-bottom: 20px;
+    text-align: center;
+    text-shadow: 0 4px 8px rgba(255, 105, 135, 0.6);
+}
+
+#letter p {
+    margin-bottom: 15px;
+    text-indent: 20px; /* Slightly reduced indentation for responsiveness */
+}
+
+#letter p strong {
+    font-size: 1.1em;
+}
+
+/* Button container styling */
+#button-container {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    margin-top: 30px; /* Adjusted margin for better spacing */
+}
+
+/* Button styling */
+#chatButton, #declineButton {
+    font-family: Arial, sans-serif; /* Normal font */
+    background-color: #ff6f91;
+    color: white;
+    padding: 12px 30px;
+    border: none;
     border-radius: 30px;
-    font-size: 16px;
-    background-color: #fffaf0;
+    font-size: 1.1em;
+    cursor: pointer;
+    box-shadow: 0 10px 20px rgba(255, 105, 135, 0.4);
+    transition: all 0.3s ease;
     outline: none;
-    margin-right: 10px;
 }
 
-button {
-    padding: 15px 30px; /* Bigger button */
-    background-color: #ff69b4; /* Hot pink button */
-    border: none;
-    border-radius: 30px;
-    color: white;
-    font-size: 18px;
-    font-weight: bold;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
-    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+#chatButton:hover, #declineButton:hover {
+    background-color: #ff4081;
+    box-shadow: 0 15px 30px rgba(255, 105, 135, 0.6);
+    transform: translateY(-3px);
 }
 
-button:hover {
-    background-color: #ff1493; /* Darker pink on hover */
+#declineButton {
+    background-color: #ff9e9e;
 }
 
-#deleteUser2Messages {
-    padding: 12px;
-    margin: 10px auto;
-    background-color: #ff3333;
-    color: white;
-    border: none;
-    border-radius: 30px;
-    cursor: pointer;
-    display: none;
+#declineButton:hover {
+    background-color: #ff6f91;
 }
 
-/* Mobile responsiveness */
+/* Media query for responsive design */
 @media (max-width: 600px) {
-    #chat-container {
-        height: 100vh;
-    }
-
-    #messages {
+    body {
         padding: 10px;
     }
 
-    .message {
-        padding: 10px;
-        font-size: 14px;
+    .letter-container {
+        padding: 20px; /* Reduced padding for mobile */
+        margin: 10px; /* Reduce margin for smaller screens */
+        font-size: 1em; /* Adjusted font size for smaller screens */
+        width: 100%; /* Make the container take full width on mobile */
     }
 
-    #messageText {
-        padding: 12px;
-        font-size: 14px;
+    #letter {
+        font-size: 1em; /* Smaller font for mobile */
+        line-height: 1.4em; /* Reduced line height for mobile */
+    }
+    
+    #button-container {
+        flex-direction: column; /* Stack buttons vertically on small screens */
+        align-items: center; /* Center the buttons */
+        width: 100%; /* Ensure buttons take full width */
     }
 
-    button {
-        padding: 12px 20px; /* Still larger for mobile */
-        font-size: 16px;
-    }
-
-    #deleteUser2Messages {
-        padding: 10px;
-        font-size: 14px;
+    #chatButton, #declineButton {
+        width: 100%; /* Full width for buttons on mobile */
+        margin-bottom: 10px; /* Spacing between buttons */
+        padding: 12px; /* Reduce button padding for mobile */
     }
 }
