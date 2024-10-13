@@ -21,7 +21,7 @@ body {
     max-width: 800px;
     background-color: #fff0f5;
     padding: 20px;
-    margin: 20px;
+    margin: 10px 20px 30px; /* Reduced top margin, added more at the bottom */
     border-radius: 20px;
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
     text-align: left;
@@ -107,7 +107,7 @@ body {
 
     .letter-container {
         padding: 20px;
-        margin: 10px;
+        margin: 5px 10px 20px; /* Adjusted margins for mobile */
         width: 100%; /* Full width for mobile */
         height: 85vh; /* Adjust height for mobile */
     }
